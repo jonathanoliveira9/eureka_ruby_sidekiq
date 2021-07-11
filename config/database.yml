@@ -15,7 +15,9 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password:
-  socket: /var/run/mysqld/mysqld.sock
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
 
 development:
   <<: *default
@@ -51,5 +53,4 @@ test:
 production:
   <<: *default
   database: eureka_ruby_sidekiq_production
-  username: eureka_ruby_sidekiq
-  password: <%= ENV['EUREKA_RUBY_SIDEKIQ_DATABASE_PASSWORD'] %>
+
