@@ -20,16 +20,21 @@ x<div class="collapse" id="navbarToggleExternalContent">
         <%= form_tag dispatch_mail_welcome_index_url do %>
           <div class="mb-3">
             <%= label_tag 'Name', nil, class: 'form-label' %>
-            <%= text_field_tag :name, nil, class: 'form-control', required: true %>
+            <%= text_field_tag 'mail[name]', nil, class: 'form-control', required: true %>
           </div>
           <div class="mb-3">
             <%= label_tag 'Email' %>
-            <%= text_field_tag :email, nil, class: 'form-control', pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', required: true %>
+            <%= text_field_tag 'mail[email]', nil, class: 'form-control', pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', required: true %>
           </div>
           <div class="mb-3">
             <%= label_tag 'Message' %>
-            <%= text_area_tag :message, nil, class: 'form-control', required: true %>
+            <%= text_area_tag 'mail[message]', nil, class: 'form-control', required: true %>
           </div>
+          <div class="mb-3">
+            <%= label_tag 'Quantity' %>
+            <%= number_field_tag 'mail[quantity]', nil, class: 'form-control', required: true %>
+          </div>
+          
           <%= submit_tag "Submit", class: 'btn btn-primary' %>
         <% end %>
         <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
