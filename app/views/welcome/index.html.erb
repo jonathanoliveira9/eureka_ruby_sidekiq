@@ -1,4 +1,4 @@
-<div class="collapse" id="navbarToggleExternalContent">
+x<div class="collapse" id="navbarToggleExternalContent">
   <div class="bg-dark p-4">
     <h5 class="text-white h4">Collapsed content</h5>
     <span class="text-muted">Toggleable via the navbar brand.</span>
@@ -20,15 +20,15 @@
         <%= form_tag dispatch_mail_welcome_index_url do %>
           <div class="mb-3">
             <%= label_tag 'Name', nil, class: 'form-label' %>
-            <%= text_field_tag :name, nil, class: 'form-control' %>
+            <%= text_field_tag :name, nil, class: 'form-control', required: true %>
           </div>
           <div class="mb-3">
             <%= label_tag 'Email' %>
-            <%= text_field_tag :email, nil, class: 'form-control' %>
+            <%= text_field_tag :email, nil, class: 'form-control', pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$', required: true %>
           </div>
           <div class="mb-3">
-            <%= label_tag 'Text' %>
-            <%= text_area_tag :text, nil, class: 'form-control' %>
+            <%= label_tag 'Message' %>
+            <%= text_area_tag :message, nil, class: 'form-control', required: true %>
           </div>
           <%= submit_tag "Submit", class: 'btn btn-primary' %>
         <% end %>
