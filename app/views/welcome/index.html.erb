@@ -17,6 +17,21 @@
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="fw-light">Send Mailer</h1>
+        <%= form_tag dispatch_mail_welcome_index_url do %>
+          <div class="mb-3">
+            <%= label_tag 'Name', nil, class: 'form-label' %>
+            <%= text_field_tag :name, nil, class: 'form-control' %>
+          </div>
+          <div class="mb-3">
+            <%= label_tag 'Email' %>
+            <%= text_field_tag :email, nil, class: 'form-control' %>
+          </div>
+          <div class="mb-3">
+            <%= label_tag 'Text' %>
+            <%= text_area_tag :text, nil, class: 'form-control' %>
+          </div>
+          <%= submit_tag "Submit", class: 'btn btn-primary' %>
+        <% end %>
         <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
         <p>
         </p>
