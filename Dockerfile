@@ -6,7 +6,6 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     apt-get update && \
     apt-get install -qq -y build-essential libpq-dev nodejs git yarn
 
-
 WORKDIR /app
 
 ADD Gemfile /app/Gemfile
