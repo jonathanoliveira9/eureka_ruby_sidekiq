@@ -1,0 +1,19 @@
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Error Handling</h1>
+        <%= form_tag handling_error_mail_welcome_index_url, remote: true do %>
+          <div class="mb-3">
+            <%= label_tag 'Message' %>
+            <%= text_area_tag 'mail[message]', nil, class: 'form-control', required: true %>
+          </div>
+          <%= submit_tag "Submit", class: 'btn btn-primary' %>
+        <% end %>
+        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+        <p>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>

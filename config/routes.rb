@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :welcome do
     collection do
       post :dispatch_mail
+      get :new_handling_error
+      post :handling_error_mail
     end
   end
 end
