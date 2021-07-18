@@ -1,7 +1,7 @@
 # Eureka
 
 ## Create database
-´´´bash
+```bash
 sudo docker-compose run app rails db:create
 sudo docker-compose run app rails db:migrate
-´´´
+```
