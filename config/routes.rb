@@ -12,4 +12,6 @@ Rails.application.routes.draw do
       post :handling_error_mail
     end
   end
+
+  resources :imports, only: [:index]
 end

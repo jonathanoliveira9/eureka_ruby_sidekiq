@@ -1,0 +1,18 @@
+<table class="table  table-striped">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Status</th>
+      <th>Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @imports.each do |import| %>
+    <tr>
+      <td><%= import.id %></td>
+      <td><%= import.status %></td>
+      <td><%= import.created_at %></td>
+    </tr>  
+    <% end %>
+  </tbody>
+</table>
