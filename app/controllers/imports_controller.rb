@@ -1,5 +1,5 @@
 class ImportsController < ApplicationController
   def index
-    @imports = Import.where('true')
+    @pagy, @imports = pagy(Import.order(created_at: :desc))
   end
 end
