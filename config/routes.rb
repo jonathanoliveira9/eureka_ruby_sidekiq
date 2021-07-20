@@ -13,5 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :imports, only: [:index]
+  resources :imports, only: [:index] do
+    resources :import_lines, only: [:index]
+  end
 end

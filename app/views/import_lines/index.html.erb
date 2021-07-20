@@ -1,0 +1,32 @@
+<div class="container">
+
+<div class="container">
+  <div class="p-2">
+    <h1>Details Import</h1>
+  </div>
+  <div class="shadow-lg p-3 mb-5 bg-body rounded">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Last Name</th>
+          <th>Error Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @import_lines.each do |import| %>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><%= import.error_message %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
