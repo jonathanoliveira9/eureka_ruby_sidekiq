@@ -17,7 +17,7 @@
         <% @imports.each do |import| %>
           <tr>
             <td><%= import.code %></td>
-            <td><%= import.status %></td>
+            <td><%= color_status(import.status) %></td>
             <td><%= import.created_at %></td>
             <td>Test</td>
           </tr>  

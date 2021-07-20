@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_18_170418) do
+ActiveRecord::Schema.define(version: 2021_07_20_000547) do
 
   create_table "import_lines", charset: "utf8mb4", force: :cascade do |t|
     t.integer "import_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_07_18_170418) do
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "code"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
