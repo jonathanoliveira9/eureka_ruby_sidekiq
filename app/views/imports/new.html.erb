@@ -1,19 +1,28 @@
 <div class="container pt-5">  
   <h1>Insert Bulk Users</h1>
+  
   <div class="home"></div>
   <p>This module is to insert bulk users with sidekiq.</p>
   
-  <div class="col-4 justify-content-center">
+  <div class="col-4">
     <div class="card">
-      <div class="card-header">Bulk Users</div>
+      <div class="card-header d-flex justify-content-between">
+        Bulk Users <%= import_template_link %>
+      </div>
+ 
       <div class="card-body">
         <p class="card-text">Import Bulk of Users with the file xlsx. Import Bulk of Users with the file xlsx. Import Bulk of Users with the file xlsx.</p>
       </div>
-      <div class="card-footer text-muted">
-        <%= link_to "#", class: "btn btn-success" do %>
-          <i class="far fa-file-excel"></i> Send
-        <% end %>
-        <%= import_template_link %>
+      <div class="card-footer ">
+      
+        <%= form_for @import do |f| %>
+        <div class="d-flex justify-content-between">   
+          <%= f.file_field :attachment_template, class: 'form-control-sm' %>
+          <%= button_tag type: :submit, class: 'btn btn-primary' do %>
+            <i class="fas fa-upload"></i> Send
+          <% end %>
+        </div>
+      <% end %>
       </div>
     </div>
   </div>

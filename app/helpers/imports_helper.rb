@@ -11,7 +11,7 @@ module ImportsHelper
   end
 
   def import_template_link
-    link_to '/spreadsheets_models/example_template_bulk_user.xlsx', class: 'btn btn-primary' do 
+    link_to '/spreadsheets_models/example_template_bulk_user.xlsx', class: 'btn btn-success' do 
       content_tag(:i, ' Download', class: 'far fa-file-excel')
     end
   end
