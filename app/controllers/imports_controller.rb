@@ -12,6 +12,7 @@ class ImportsController < ApplicationController
     @import.in_progress!
     respond_to do |format|
       format.html { }
+      ImportJob.perform_later(@import.id)
       redirect_to imports_path
     end
   end
