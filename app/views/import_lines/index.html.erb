@@ -18,10 +18,10 @@
       <tbody>
         <% @import_lines.each do |import| %>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><%= import.first_name %></td>
+            <td><%= import.email %></td>
+            <td><%= import.phone %></td>
+            <td><%= import.last_name %></td>
             <td><%= import.error_message %></td>
           </tr>
         <% end %>
