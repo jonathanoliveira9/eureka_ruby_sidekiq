@@ -17,6 +17,7 @@
             <th>Code</th>
             <th>Status</th>
             <th>Created</th>
+            <th>File</th>
             <th></th>
           </tr>
         </thead>
@@ -26,6 +27,12 @@
               <td><%= import.code %></td>
               <td><%= color_status(import.status) %></td>
               <td><%= import.created_at %></td>
+              <td>
+                <%= link_to rails_blob_path(import.attachment_template, disposition: 'preview'), class: 'fa-stack fa-lg' do %>
+                <i class="cil-cloud-download"></i>
+
+                <% end %>
+              </td>
               <td>
                 <%= link_to import_import_lines_path(import) do %>
                   <span><i class="far fa-eye"></i></span>
