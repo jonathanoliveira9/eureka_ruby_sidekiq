@@ -14,7 +14,15 @@ module ImportLines
     private
 
     def create_line
-      ImportLine.create(params)
+      import_line = ImportLine.create(params.merge(import_id: import_id))
+      create_user(import_line)
+    end
+
+    def create_user(import_line)
+      User.create!(params)
+    rescue ActiveRecord::RecordInvalid => e
+      import_line.update_column(:error_message, e.record.errors.full_messages.join(','))
+      raise e.message
     end
   end
 end
