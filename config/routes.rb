@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :imports, only: [:index, :new, :create] do
     resources :import_lines, only: [:index]
   end
+  resources :import_lines, only: [:edit, :update]
 end

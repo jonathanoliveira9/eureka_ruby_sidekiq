@@ -18,6 +18,7 @@ class ImportsController < ApplicationController
   end
 
   private
+
   def import_params
     params.require(:import).permit(:attachment_template)
   end
