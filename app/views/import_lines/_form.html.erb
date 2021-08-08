@@ -1,6 +1,29 @@
-<%= form_with(model: @import_line) do |f| %>
-  <%= f.text_field :first_name %>
-  <%= f.text_field :last_name %>
-  <%= f.text_field :email %>
-  <%= f.text_field :phone %>
-<% end %>
+<div class="container pt-5">  
+  <h1 class="text-center">Edit Form User</h1>
+  <div class="shadow p-3 mb-5 bg-body rounded">
+    <%= form_with(model: @import_line) do |f| %>
+      <div class="row g-3">
+        <div class="col-6">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, class: 'form-control' %>
+        </div>
+        <div class="col-6">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, class: 'form-control' %>
+        </div>
+        <div class="col-6">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
+        <div class="col-6">
+          <%= f.label :phone %>
+          <%= f.text_field :phone, class: 'form-control' %>
+        </div>
+      </div>
+      <br>
+      <div class="col-12">
+        <%= f.submit 'Save', class: 'btn btn-success', style: 'width: 100% !important;', data: { disable_with: 'Processing...' } %>
+      </div>
+    <% end %>
+  </div>
+</div>
