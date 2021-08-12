@@ -1,5 +1,5 @@
-class ImportJob < ApplicationJob
-  queue_as :bulk_users
+class ImportWorker
+  include Sidekiq::Worker
 
   def perform(import_id)
     Imports::ProcessImportService.run(import_id)

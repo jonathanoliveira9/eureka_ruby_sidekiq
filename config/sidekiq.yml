@@ -3,3 +3,4 @@
 :queues:
   - default
   - mailers
+  - bulk_users
