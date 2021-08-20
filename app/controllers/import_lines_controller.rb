@@ -12,6 +12,7 @@ class ImportLinesController < ApplicationController
     @import_line.assign_attributes(params_import_lines)
     respond_to do |format|
       if @import_line.save
+        ImportLineWorker.perform_asyn(@import_line.id)
         format.html
         redirect_to import_import_lines_path(@import_line.import)
       else
