@@ -1,0 +1,48 @@
+
+<div class="container">
+  <div class="p-2">
+    <h1>My Imports</h1>
+  </div>
+  <div class="p-2">
+    <%= link_to 'New Import',
+    new_import_path, class: 'btn btn-right btn-primary',
+    'data-togle': 'tooltip', title: 'Iniciar nova importação em massa.' %>
+  </div>
+  <div>
+
+    <div class="shadow-lg p-3 mb-5 bg-body rounded">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Status</th>
+            <th>Created</th>
+            <th>File</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @imports.each do |import| %>
+            <tr>
+              <td><%= import.code %></td>
+              <td><%= color_status(import.status) %></td>
+              <td><%= import.created_at %></td>
+              <td>
+                <%= link_to rails_blob_path(import.attachment_template, disposition: 'preview'), class: 'fa-stack fa-lg' do %>
+                <i class="cil-cloud-download"></i>
+
+                <% end %>
+              </td>
+              <td>
+                <%= link_to import_import_lines_path(import) do %>
+                  <span><i class="far fa-eye"></i></span>
+                <% end %>
+              </td>
+            </tr>  
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <%= pagy_bootstrap_nav(@pagy).html_safe %>
+</div>
