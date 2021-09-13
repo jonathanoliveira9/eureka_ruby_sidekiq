@@ -1,5 +1,6 @@
 # Eureka
-
+## Build Container
+``bash
 ## Create database
 ```bash
 sudo docker-compose run app rails db:create
