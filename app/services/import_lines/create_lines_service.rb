@@ -19,7 +19,7 @@ module ImportLines
     end
 
     def create_user(import_line)
-      User.create!(params)
+      Users::CreateService.new(params).run
     rescue ActiveRecord::RecordInvalid => e
       import_line.update_column(:error_message, e.record.errors.full_messages.join(','))
       raise e.message
